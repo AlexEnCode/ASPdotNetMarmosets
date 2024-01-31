@@ -1,0 +1,47 @@
+﻿@model List<Marmosets>
+@{
+	ViewData["Title"] = "Liste des Marmosets";
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">@Html.DisplayNameForInnerType((Marmosets m) => m.Nom)</th>
+            <th scope="col">@Html.DisplayNameForInnerType((Marmosets m) => m.Age)</th>
+            <th scope="col">@Html.DisplayNameForInnerType((Marmosets m) => m.Taille)</th>
+            <th scope="col">@Html.DisplayNameForInnerType((Marmosets m) => m.Poids)</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (Marmosets m in Model)
+         {
+            <tr>
+                <th scope="row">@m.Id</th>
+                <td>@m.Nom</td>
+                <td>@m.Age</td>
+                <td>@m.Taille</td>
+                <td>@m.Poids</td>
+                <td><a class="btn btn-outline-info" asp-action="Details" asp-route-id="@m.Id">Détails</a></td>
+                <td><a class="btn btn-outline-info btn-danger" asp-action="DeleteByID" asp-route-id="@m.Id">X</a></td>
+            </tr>
+        }
+
+</table>
+	</tbody>
+        <div>
+            <br><br><br>
+    <form id="rechercheForm" method="get" action="/Marmosets/DeleteByID">
+
+                <label for="id">ID:</label>
+                <br>
+                <input type="text" id="id" name="id" placeholder="Entrez l'ID">
+                <br><br />
+                <button type="submit">Delete</button>
+            </form>
+
+        </div>
+

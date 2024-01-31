@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Add Marmosets";
+}
+
+<h1>Add</h1>
+
+<form id="rechercheForm" method="post" action="/Marmosets/AddMarmosets">
+    <div class="mb-3">
+        <label for="Nom" class="form-label">Nom</label>
+        <input type="text" class="form-control" id="Nom" name="Nom">
+    </div>
+    <div class="mb-3">
+        <label for="Poids" class="form-label">Poids</label>
+        <input type="text" class="form-control" id="Poids" name="Poids">
+    </div>
+    <div class="mb-3">
+        <label for="Taille" class="form-label">Taille</label>
+        <input type="text" class="form-control" id="Taille" name="Taille">
+    </div>
+    <div class="mb-3">
+        <label for="Age" class="form-label">Age</label>
+        <input type="text" class="form-control" id="Age" name="Age">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
